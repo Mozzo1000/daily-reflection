@@ -17,7 +17,7 @@ import { db } from '../db';
     At least X steps per day
 */
 
-function AddGoal() {
+function AddGoal(props) {
     const [goalType, setGoalType] = useState("simple");
     const [goalName, setGoalName] = useState();
     const [goal, setGoal] = useState();
@@ -30,8 +30,8 @@ function AddGoal() {
                 type: goalType,
                 goal
               });
-        
               console.log(`Goal ${goal} successfully added. Got id ${id}`);
+              props.onSuccess();
             } catch (error) {
               console.log(`Failed to add ${goal}: ${error}`);
             }
