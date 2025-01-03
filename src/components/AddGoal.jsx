@@ -39,7 +39,7 @@ function AddGoal(props) {
 
     return (
         <div>
-            <div className="flex max-w-md flex-col gap-4">
+            <div className="flex flex-col gap-4">
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="goal_name" value="What would you like to track?" />
