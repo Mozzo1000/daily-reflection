@@ -1,8 +1,6 @@
-# React + Vite
+# daily-reflection
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Scope
+- Record your personal goals like brushing your teeth two times a day and read for 60 minutes every day.
+- Reflect on your day and input how well you did to meet your goals.
+- Every reflection starts with a mood check, how did you feel today?
