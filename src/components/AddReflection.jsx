@@ -110,7 +110,7 @@ function AddReflection() {
                         <Button pill outline color="light" onClick={() => setContentIndex(contentIndex+1)}><MdOutlineNavigateNext className="w-6 h-6" /></Button>
                     }
                     {contentIndex === contentLimit+1 &&
-                        <Button color="light" onClick={() => (saveReflection, setOpenDrawer(false), setContentIndex(0))}>Save reflection</Button>
+                        <Button color="light" onClick={() => (saveReflection(), setOpenDrawer(false), setContentIndex(0))}>Save reflection</Button>
                     }
                 </div>
             </Drawer.Items>
