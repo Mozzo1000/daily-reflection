@@ -15,7 +15,7 @@ function Goals() {
     const [editID, setEditID] = useState(0);
 
     return (
-        <div className="container mx-auto max-w-2xl py-8">
+        <div className="container mx-auto max-w-2xl">
             <div className="flex flex-row justify-between">
             <h2 className="text-3xl font-bold dark:text-white">Your goals</h2>
             <Button outline pill color="light" size="xs" onClick={() => setOpenDrawer(!openDrawer)}><IoIosAdd className="h-6 w-6"/></Button>

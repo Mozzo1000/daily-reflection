@@ -6,6 +6,7 @@ import Reflections from "./pages/Reflections";
 function App() {
 
   return (
+    <div className="p-4 sm:p-8 md:p-16">
       {localStorage.getItem("name") &&
         <Navbar />
       }
@@ -13,7 +14,7 @@ function App() {
         <Route path="/" element={<Reflections />} />
         <Route path="/goals" element={<Goals />} />
       </Routes>
-    </>
+    </div>
   )
 }
 
