@@ -21,7 +21,6 @@ function EditGoal(props) {
     }, [goalInfo])
 
     const handleDeletion = () => {
-        console.log("DELETE!")
         db.goals.delete(props.id)
         props.onSuccessfulDeletion();
     };
