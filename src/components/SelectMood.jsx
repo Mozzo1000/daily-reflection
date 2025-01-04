@@ -3,6 +3,20 @@ import { Button, Tooltip } from 'flowbite-react';
 import { db } from '../db';
 import Moods from '../pages/moods';
 
+export function textToEmoji(text) {
+    if (text === "sad") {
+        return[ "😞", "Sad"];
+    }else if (text === "frustrated") {
+        return ["😤", "Frustrated"];
+    }else if (text === "neutral") {
+        return ["😐", "Neutral"];
+    }else if (text === "happy") {
+        return ["😊", "Happy"];
+    }else if (text === "amazing") {
+        return ["😃", "Amazing!"];
+    }
+}
+
 function SelectMood(props) {
     /*
     Sad: 😞
@@ -12,19 +26,7 @@ function SelectMood(props) {
     Amazing: 😃
     */
 
-    const textToEmoji = (text) => {
-        if (text === "sad") {
-            return[ "😞", "Sad"];
-        }else if (text === "frustrated") {
-            return ["😤", "Frustrated"];
-        }else if (text === "neutral") {
-            return ["😐", "Neutral"];
-        }else if (text === "happy") {
-            return ["😊", "Happy"];
-        }else if (text === "amazing") {
-            return ["😃", "Amazing!"];
-        }
-    }
+    
 
     return (
         <div className="flex flex-col items-center gap-10">
