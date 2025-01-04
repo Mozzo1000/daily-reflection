@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AddReflection from '../components/AddReflection'
 import { db } from '../db';
 import { useLiveQuery } from "dexie-react-hooks";
-import { Card, Drawer } from 'flowbite-react';
+import { Card, Drawer, HR } from 'flowbite-react';
 import { textToEmoji } from "../components/SelectMood";
 import ReflectionView from '../components/ReflectionView';
+import Setup from '../components/Setup';
 
 function Reflections() {
     const reflections = useLiveQuery(() => db.reflections.toArray());
@@ -12,9 +13,12 @@ function Reflections() {
     const todaysReflection = useLiveQuery(() => db.reflections.where("date").equals(today).first());
     const [openReflectionDetails, setOpenReflectionDetails] = useState(false);
     const [selectedReflectionID, setSelectedReflectionID] = useState(0);
+    const [userName, setUserName] = useState(localStorage.getItem("name"))   
 
     return (
-        <div className="container mx-auto max-w-2xl py-8">
+        <div className="container mx-auto max-w-2xl">
+            <h1 className="text-4xl font-bold mb-6">👋Hi, {userName}!</h1>
+            <HR/>
             <h2 className="text-3xl font-bold dark:text-white">Your reflections</h2>
                 
             <div className="flex flex-col gap-4 py-4">
@@ -57,6 +61,7 @@ function Reflections() {
                     <ReflectionView id={selectedReflectionID} />
                 </Drawer.Items>
             </Drawer>
+            <Setup setName={setUserName} />
         </div>
     )
 }
