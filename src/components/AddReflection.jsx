@@ -7,6 +7,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { FaThumbsUp } from "react-icons/fa6";
 import { FaThumbsDown } from "react-icons/fa6";
 import { MdOutlineNavigateNext } from "react-icons/md";
+import { TextToEmoji } from "../components/SelectMood";
 
 function AddReflection() {
     const drawerTheme = {
@@ -68,7 +69,7 @@ function AddReflection() {
     return (
         <div>
             <Button onClick={() => setOpenDrawer(true)}>Add reflection</Button>
-            <Drawer theme={drawerTheme} open={openDrawer} onClose={() => setOpenDrawer(false)} position="bottom" className="text-white bg-orange-500 h-screen">
+            <Drawer theme={drawerTheme} open={openDrawer} onClose={() => setOpenDrawer(false)} position="bottom" style={{backgroundColor: TextToEmoji(selectedMood)[2]}} className={"text-white h-screen "}>
             <Drawer.Header title="Reflect on your day" titleIcon={FaStar}/>
             <Drawer.Items>
                 {contentIndex === 0 &&
