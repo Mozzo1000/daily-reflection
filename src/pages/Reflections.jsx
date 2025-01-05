@@ -3,7 +3,7 @@ import AddReflection from '../components/AddReflection'
 import { db } from '../db';
 import { useLiveQuery } from "dexie-react-hooks";
 import { Card, Drawer, HR } from 'flowbite-react';
-import { textToEmoji } from "../components/SelectMood";
+import { TextToEmoji } from "../components/SelectMood";
 import ReflectionView from '../components/ReflectionView';
 import Setup from '../components/Setup';
 
@@ -42,7 +42,7 @@ function Reflections() {
                                     <div className="flex flex-col gap-4">
                                         <p className="text-xl font-semibold">{new Date(item.date).toLocaleDateString("en-US", {weekday: "long"})}</p>
                                         <h4 className="text-5xl">
-                                            {textToEmoji(item.mood)[0]}
+                                            {TextToEmoji(item.mood)[0]}
                                         </h4>
                                     </div>
                                     <div className="flex flex-col gap-4 items-center">

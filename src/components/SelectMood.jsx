@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Tooltip } from 'flowbite-react';
-import { db } from '../db';
-import Moods from '../pages/moods';
 
-export function textToEmoji(text) {
+export function TextToEmoji(text) {
     if (text === "sad") {
-        return[ "😞", "Sad"];
+        return[ "😞", "Sad", "#4370F2"];
     }else if (text === "frustrated") {
-        return ["😤", "Frustrated"];
+        return ["😤", "Frustrated", "#FF763C"];
     }else if (text === "neutral") {
-        return ["😐", "Neutral"];
+        return ["😐", "Neutral", "#7DE4EA"];
     }else if (text === "happy") {
-        return ["😊", "Happy"];
+        return ["😊", "Happy", "#FFCF30"];
     }else if (text === "amazing") {
-        return ["😃", "Amazing!"];
+        return ["😃", "Amazing!", "#FC829F"];
     }
 }
 
@@ -32,8 +30,8 @@ function SelectMood(props) {
         <div className="flex flex-col items-center gap-10">
             <h2 className="text-4xl font-bold dark:text-white">How did you feel today?</h2>
 
-            <h3 className="text-9xl">{textToEmoji(props.mood)[0]}</h3>
-            <h4 className="text-2xl font-bold">{textToEmoji(props.mood)[1]}</h4>
+            <h3 className="text-9xl">{TextToEmoji(props.mood)[0]}</h3>
+            <h4 className="text-2xl font-bold">{TextToEmoji(props.mood)[1]}</h4>
 
             <div className="flex flex-row gap-4">
                 <Tooltip content="Sad" placement="bottom">
