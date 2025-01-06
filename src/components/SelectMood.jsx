@@ -7,9 +7,9 @@ export function TextToEmoji(text) {
     }else if (text === "frustrated") {
         return ["😤", "Frustrated", "#FF763C"];
     }else if (text === "neutral") {
-        return ["😐", "Neutral", "#64dce3"];
+        return ["😐", "Neutral", "#6DBAFF"];
     }else if (text === "happy") {
-        return ["😊", "Happy", "#fad041"];
+        return ["😊", "Happy", "#FEA125"];
     }else if (text === "amazing") {
         return ["😃", "Amazing!", "#FC829F"];
     }
