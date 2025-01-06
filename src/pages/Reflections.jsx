@@ -8,7 +8,7 @@ import ReflectionView from '../components/ReflectionView';
 import Setup from '../components/Setup';
 
 function Reflections() {
-    const reflections = useLiveQuery(() => db.reflections.toArray());
+    const reflections = useLiveQuery(() => db.reflections.orderBy("date").reverse().toArray());
     const today = new Date().toISOString().slice(0, 10);
     const todaysReflection = useLiveQuery(() => db.reflections.where("date").equals(today).first());
     const [openReflectionDetails, setOpenReflectionDetails] = useState(false);
@@ -37,7 +37,7 @@ function Reflections() {
                 {reflections?.map((item) => (
                     <>
                         <h3 className="text-2xl font-bold">{new Date(item.date).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}</h3>
-                        <Card key={item.id} className="cursor-pointer" onClick={() => (setSelectedReflectionID(item.id), setOpenReflectionDetails(true))}>
+                        <Card key={item.id} className="cursor-pointer" style={{backgroundColor: TextToEmoji(item.mood)[2]}} onClick={() => (setSelectedReflectionID(item.id), setOpenReflectionDetails(true))}>
                                 <div className="flex justify-between items-center">
                                     <div className="flex flex-col gap-4">
                                         <p className="text-xl font-semibold">{new Date(item.date).toLocaleDateString("en-US", {weekday: "long"})}</p>
