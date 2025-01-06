@@ -83,13 +83,13 @@ function AddReflection() {
                         <div className="max-w-sm mx-auto">
                             <div>
                             {item.type === "simple" &&
-                                <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-extrabold dark:text-white">{item.name}</span> {item.goal} times today?</h2>
+                                <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-bold underline dark:text-white">{item.name}</span> {item.goal} times today?</h2>
                             }
                             {item.type === "minute" &&
-                                <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-extrabold dark:text-white">{item.name}</span> for {item.goal} minutes today? </h2>
+                                <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-bold underline dark:text-white">{item.name}</span> for {item.goal} minutes today? </h2>
                             }
                             {item.type === "step" &&
-                               <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-extrabold dark:text-white">{item.name}</span> {item.goal} steps today? </h2>
+                               <h2 className="text-8xl text-white dark:text-gray-400">Did you <span className="font-bold underline dark:text-white">{item.name}</span> {item.goal} steps today? </h2>
                             }
                             </div>
                             <div className="flex flex-row gap-64 justify-center pt-10">
@@ -103,7 +103,7 @@ function AddReflection() {
                 ))}
                 {contentIndex === contentLimit+1 &&
                     <div className="max-w-sm mx-auto flex-flex-col gap-10">
-                        <h2 className="text-8xl text-white dark:text-gray-400">Amazing work! <span className="font-extrabold dark:text-white">You</span> did great! </h2>
+                        <h2 className="text-8xl text-white dark:text-gray-400">Amazing work! <span className="font-bold underline dark:text-white">You</span> did great! </h2>
                     </div>
                 }
                 <div className="flex flex-row justify-center pt-10">
