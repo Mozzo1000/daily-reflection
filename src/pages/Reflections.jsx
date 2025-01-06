@@ -22,7 +22,6 @@ function Reflections() {
             <h2 className="text-3xl font-bold dark:text-white">Your reflections</h2>
                 
             <div className="flex flex-col gap-4 py-4">
-                {console.log(todaysReflection)}
                 {todaysReflection === undefined &&
                     <>
                     <h3 className="text-2xl font-bold">{new Date(today).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}</h3>
@@ -34,8 +33,8 @@ function Reflections() {
                     </Card>
                     </>
                 }
-                {reflections?.map((item) => (
-                    <>
+                {reflections?.map((item, index) => (
+                    <div key={index}>
                         <h3 className="text-2xl font-bold">{new Date(item.date).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}</h3>
                         <Card key={item.id} className="cursor-pointer text-white" style={{backgroundColor: TextToEmoji(item.mood)[2]}} onClick={() => (setSelectedReflectionID(item.id), setOpenReflectionDetails(true))}>
                                 <div className="flex justify-between items-center">
@@ -52,7 +51,7 @@ function Reflections() {
                                     </div>
                                 </div>
                         </Card>
-                    </>
+                    </div>
                 ))}
             </div>
             <Drawer open={openReflectionDetails} onClose={()=>setOpenReflectionDetails(false)} position="bottom" className="h-4/6">

@@ -21,9 +21,9 @@ function Goals() {
             <Button outline pill color="light" size="xs" onClick={() => setOpenDrawer(!openDrawer)}><IoIosAdd className="h-6 w-6"/></Button>
             </div>
             <div className="flex flex-col gap-4 py-4">
-                {goals?.map((item) => (
-                    <>
-                    <Card key={item.id}>
+                {goals?.map((item, index) => (
+                    <div key={index}>
+                    <Card>
                         <div className="flex justify-between items-center">
                             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {item.name}
@@ -44,7 +44,7 @@ function Goals() {
                             }
                         </div>
                     </Card>
-                    </>
+                    </div>
                 ))}
             </div>
             <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)} position="bottom" className='h-4/6'>

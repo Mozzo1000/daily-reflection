@@ -31,7 +31,6 @@ function AddReflection() {
     
     useEffect(() => {
           setContentLimit(goals?.length)
-          console.log(goals?.length)    
     }, [goals])
 
     /*'++id, date, metGoals, unMetGoals, mood */
@@ -43,10 +42,7 @@ function AddReflection() {
             metGoals: metGoals,
             unMetGoals: unMetGoals,
             mood: selectedMood
-        });
-    
-        console.log(`Mood ${selectedMood} successfully added. Got id ${id} - ${date}`);
-            
+        });            
         } catch (error) {
             console.log(`Failed to add ${selectedMood}: ${error}`);
         }
@@ -56,14 +52,12 @@ function AddReflection() {
         const oldState = metGoals;
         oldState.push(id);
         setMetGoals(oldState);
-        console.log(metGoals);
     }
 
     const addUnmetGoal = (id) => {
         const oldState = unMetGoals;
         oldState.push(id);
         setUnMetGoals(oldState);
-        console.log(unMetGoals);
     }
 
     return (
