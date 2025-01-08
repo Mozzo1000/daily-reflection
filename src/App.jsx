@@ -3,6 +3,7 @@ import Goals from "./pages/Goals";
 import Navbar from "./components/Navbar";
 import Setup from "./components/Setup";
 import Reflections from "./pages/Reflections";
+import Settings from "./pages/Settings";
 function App() {
 
   return (
@@ -13,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Reflections />} />
         <Route path="/goals" element={<Goals />} />
+        <Route path="/settings" element={<Settings />} />
+
       </Routes>
     </div>
   )
