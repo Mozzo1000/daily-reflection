@@ -37,7 +37,7 @@ function Reflections() {
                 {reflections?.map((item) => (
                     <>
                         <h3 className="text-2xl font-bold">{new Date(item.date).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}</h3>
-                        <Card key={item.id} className="cursor-pointer" style={{backgroundColor: TextToEmoji(item.mood)[2]}} onClick={() => (setSelectedReflectionID(item.id), setOpenReflectionDetails(true))}>
+                        <Card key={item.id} className="cursor-pointer text-white" style={{backgroundColor: TextToEmoji(item.mood)[2]}} onClick={() => (setSelectedReflectionID(item.id), setOpenReflectionDetails(true))}>
                                 <div className="flex justify-between items-center">
                                     <div className="flex flex-col gap-4">
                                         <p className="text-xl font-semibold">{new Date(item.date).toLocaleDateString("en-US", {weekday: "long"})}</p>
